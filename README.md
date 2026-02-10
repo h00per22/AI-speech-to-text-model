@@ -1,94 +1,64 @@
-# AI SmartNotes – Lecture Capture & Study Assistant
+# AI Speech to Text Model
 
-AI SmartNotes is an intelligent system that records classroom lectures and automatically converts them into clean, structured, and easy-to-study notes using Speech-to-Text and NLP techniques.
+## Overview
+This project implements an AI model that converts speech into text. It employs advanced deep learning techniques to achieve high accuracy and efficiency.
 
----
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [API Documentation](#api-documentation)
+- [Troubleshooting](#troubleshooting)
+- [Learning Resources](#learning-resources)
 
-## 🚀 Features
+## Installation
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/h00per22/AI-speech-to-text-model.git
+   cd AI-speech-to-text-model
+   ```
+2. Install the required packages:
+   ```bash
+   pip install -r requirements.txt
+   ```
 
-- 🎙️ Records classroom audio using an ESP32-based device  
-- 📝 Converts speech to text using AI  
-- 🧠 Uses NLP to clean, organize, and summarize content  
-- 📚 Generates structured notes with headings and bullet points  
-- 🌐 Web interface for uploading audio and viewing notes  
-
----
-
-## 🛠️ Tech Stack
-
-- **Hardware**: ESP32, I2S Microphone  
-- **Backend**: Node.js, Express  
-- **AI / NLP**: Speech-to-Text APIs, NLP processing  
-- **Database**: MongoDB  
-- **Frontend**: HTML, CSS, JavaScript  
-
----
-
-## ⚙️ How It Works
-
-1. ESP32 records classroom audio  
-2. Audio is uploaded to the backend server  
-3. Speech-to-Text converts audio into text  
-4. NLP cleans and structures the content  
-5. Final notes are generated and stored  
-
----
-
-## 📂 Project Structure
-
+## Usage
+To use the model, run the following command:
+```bash
+python main.py --input audio_file.wav
 ```
-AI-speech-to-text-model/
-│
-├── Project/              # Backend source code
-├── notesfrontend/        # Frontend UI
-├── .env.example          # Environment variable template
-├── README.md             # Project documentation
+Replace `audio_file.wav` with the path to your audio file.
+
+## API Documentation
+### Endpoints
+- `POST /api/convert`: Converts speech to text.
+
+### Request Example
+```json
+{
+  "audio_file": "path_to_audio_file.wav"
+}
 ```
 
----
-
-## 🔐 Environment Variables
-
-Create a `.env` file inside the `Project` folder:
-
-```
-GEMINI_API_KEY=your_api_key_here
-MONGO_URI=your_mongodb_connection_string
-PORT=3000
+### Response Example
+```json
+{
+  "transcript": "This is the transcribed text."
+}
 ```
 
-⚠️ Do NOT upload `.env` to GitHub.  
-Use `.env.example` instead.
+## Troubleshooting
+- **Issue**: No output received.
+  - **Solution**: Ensure that the correct audio format is provided and the input file path is valid.
 
----
+## Learning Resources
+- [Deep Learning for Speech Recognition](https://example.com)
+- [Natural Language Processing with Python](https://example.com)
 
-## ▶️ Run the Project (Optional)
+## Visual Diagrams
+![Model Architecture](link_to_diagram.png)
 
-```
-npm install
-npm start
-```
+## Contributing
+We welcome contributions! Please submit a pull request or open an issue to discuss.
 
-> Running the project is optional.  
-This repository is mainly for project demonstration and learning.
-
----
-
-## 🎯 Use Cases
-
-- Automatic lecture note generation  
-- Faster exam revision  
-- Helps students who miss classes  
-- AI-powered study assistant  
-
----
-
-## 🔮 Future Enhancements
-
-- Multi-language support  
-- Real-time transcription  
-- Mobile application  
-- Cloud deployment  
-
-ience & Engineering  
-AI & Full Stack Developer  
+## License
+This project is licensed under the MIT License.
